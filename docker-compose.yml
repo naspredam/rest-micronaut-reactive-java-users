@@ -1,0 +1,22 @@
+version: '2.4'
+
+services:
+
+  db:
+    image: "mysql:8.0.20"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./init-db/:/docker-entrypoint-initdb.d/:rw
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpasswd
+      MYSQL_DATABASE: app
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=rootpasswd --execute \"USE app; SHOW TABLES LIKE 'users';\""
+
+  app:
+    image: rest-micronaut-java-users
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
