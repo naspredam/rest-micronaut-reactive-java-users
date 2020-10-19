@@ -17,4 +17,4 @@ COPY --chown=micronaut --from=builder ${JAR_FILE} /home/micronaut/app.jar
 WORKDIR /home/micronaut
 USER micronaut
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","./app.jar"]

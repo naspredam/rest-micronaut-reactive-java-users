@@ -5,6 +5,13 @@ micronaut:
 datasources:
   default:
     url: jdbc:mysql://db:3306/app?autoReconnect=true&useSSL=false
-    driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: rootpasswd
+    driverClassName: com.mysql.jdbc.Driver
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
