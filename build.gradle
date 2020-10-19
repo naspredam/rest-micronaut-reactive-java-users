@@ -4,7 +4,7 @@ plugins {
 }
 
 version "0.1"
-group "com.service.micronaut.users"
+group "com.service.micronaut"
 
 configurations {
     compileOnly {
@@ -22,7 +22,7 @@ micronaut {
     testRuntime "junit5"
     processing {
         incremental true
-        annotations "com.service.micronaut.users.*"
+        annotations "com.service.micronaut.*"
     }
 }
 
