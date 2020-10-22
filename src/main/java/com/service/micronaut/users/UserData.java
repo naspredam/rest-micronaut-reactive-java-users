@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Getter
 @Entity
-@Builder
+@Builder(toBuilder = true)
 @Table(name = "users")
 @EqualsAndHashCode
 @NoArgsConstructor

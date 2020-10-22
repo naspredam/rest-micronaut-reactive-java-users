@@ -41,6 +41,7 @@ dependencies {
 
     runtimeOnly("ch.qos.logback:logback-classic")
 
+    testImplementation("org.mockito:mockito-core:2.21.0")
     testImplementation("org.assertj:assertj-core:3.6.1")
     testImplementation("com.github.javafaker:javafaker:1.0.2")
     testRuntimeOnly("com.h2database:h2")
